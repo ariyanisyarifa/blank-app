@@ -105,6 +105,8 @@ def main():
     st.write(f"**Kadar debu adalah *{kadar_debu:.2f} mg/Nm³***")
     if kadar_debu > 150:
         st.subheader("Partikulat Tidak Memenuhi Baku Mutu")
+    elif kadar_debu == 0.00:
+        st.subheader("")
     else:
         st.subheader("Partikulat Memenuhi Baku Mutu")
 

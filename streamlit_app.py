@@ -59,6 +59,8 @@ def hitung_volume_standar(volume_udara_sampling, tekanan_udara, suhu):
 
 # Fungsi untuk menghitung kadar debu
 def hitung_kadar_debu(bobot_awal, bobot_akhir, volume_udara_standar):
+    if bobot_awal == 0.00 and bobot_akhir == 0.00:
+        return 0
     kadar_debu = ((bobot_awal - bobot_akhir) * 1000) / volume_udara_standar
     return kadar_debu
 

@@ -103,14 +103,14 @@ def main():
             st.error("Harap isi inputan dengan angka yang valid")
     kadar_debu = hitung_kadar_debu(bobot_awal, bobot_akhir, volume_udara_standar)
     st.write(f"**Kadar debu adalah *{kadar_debu:.2f} mg/Nm³***")
-    if kadar_debu > 150:
+    if (kadar_debu*1000) > 150:
         st.subheader("Partikulat Tidak Memenuhi Baku Mutu")
     elif kadar_debu == 0.00:
         st.subheader("")
     else:
         st.subheader("Partikulat Memenuhi Baku Mutu")
 
-if __name__ == '__main__':
+if __name__ == '__main__': 
     main()
 
 # import streamlit as st

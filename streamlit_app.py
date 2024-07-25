@@ -102,13 +102,16 @@ def main():
         if bobot_awal == 0.0 and bobot_akhir == 0.0:
             st.error("Harap isi inputan dengan angka yang valid")
     kadar_debu = hitung_kadar_debu(bobot_awal, bobot_akhir, volume_udara_standar)
+    kadar_debu_real=kadar_debu*1000
     st.write(f"**Kadar debu adalah *{kadar_debu:.2f} mg/Nm³***")
-    if (kadar_debu*1000) > 150:
-        st.subheader("Partikulat Tidak Memenuhi Baku Mutu")
-    elif kadar_debu == 0.00:
+    if kadar_debu_real < 0:
+        st.subheader("Tidak Memenuhi Baku Mutu")
+    elif 0<= kadar_debu_real<= 150:
+        st.subheader ("Memenuhi Baku Mutu")
+    elif kadar_debu_real== 0.00:
         st.subheader("")
     else:
-        st.subheader("Partikulat Memenuhi Baku Mutu")
+        st.subheader("Kadar Debu Tidak Valid")
 
 if __name__ == '__main__': 
     main()

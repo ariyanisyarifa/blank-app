@@ -113,7 +113,7 @@ def main():
     elif kadar_debu_real== 0.00:
         st.subheader("")
     else:
-        st.subheader("Kadar Debu Tidak Valid")
+        st.subheader("Tidak Memenuhi Baku Mutu")
 
 if __name__ == '__main__': 
     main()

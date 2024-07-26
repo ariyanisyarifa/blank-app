@@ -48,21 +48,21 @@ import streamlit as st
 def hitung_volume_udara(laju_alir_awal, laju_alir_akhir, lama_pengukuran):
     volume_udara_liter = ((laju_alir_awal + laju_alir_akhir) / 2) * lama_pengukuran
     volume_udara_meter_kubik = volume_udara_liter / 1000
-    return volume_udara_meter_kubik
+    return round(volume_udara_meter_kubik, 2)
 
 # Fungsi untuk menghitung volume standar
 def hitung_volume_standar(volume_udara_sampling, tekanan_udara, suhu):
     if suhu == 0.0:
-        return 1
+        return 0
     volume_udara_standar = volume_udara_sampling * ((tekanan_udara / suhu) * (298 / 760))
-    return volume_udara_standar
+    return round(volume_udara_standar, 2)
 
 # Fungsi untuk menghitung kadar debu
 def hitung_kadar_debu(bobot_awal, bobot_akhir, volume_udara_standar):
     if bobot_awal == 0.00 and bobot_akhir == 0.00:
         return 0
     kadar_debu = ((bobot_awal - bobot_akhir) * 1000) / volume_udara_standar
-    return kadar_debu
+    return round(kadar_debu, 2)
 
 # Fungsi Utama
 def main():
@@ -80,7 +80,7 @@ def main():
         if laju_alir_awal == 0.0 and laju_alir_akhir == 0.0 and lama_pengukuran == 0.0:
             st.error("Harap isi inputan dengan angka yang valid")  
     volume_udara_meter_kubik = hitung_volume_udara(laju_alir_awal, laju_alir_akhir, lama_pengukuran)
-    st.write(f":star: **Volume udara yang disampling adalah *{volume_udara_meter_kubik:.2f} m³***")
+    st.write(f":star: **Volume udara yang disampling adalah *{volume_udara_meter_kubik:} m³***")
 
     # Form Untuk menghitung volume udara standar
     st.subheader('Form :orange[Volume udara dalam kondisi standar]', divider='orange')
@@ -93,7 +93,7 @@ def main():
         if volume_udara_sampling == 0.0 and tekanan_udara == 0.0 and suhu == 0.0:
             st.error("Harap isi inputan dengan angka yang valid")
     volume_udara_standar = hitung_volume_standar(volume_udara_sampling, tekanan_udara, suhu)
-    st.write(f":star: **Volume udara dalam kondisi standar adalah *{volume_udara_standar:.2f} Nm³***")
+    st.write(f":star: **Volume udara dalam kondisi standar adalah *{volume_udara_standar:} Nm³***")
 
     st.subheader('Form :blue[Hitung kadar debu]', divider='blue')
     bobot_awal = st.number_input("Input Bobot Awal (gram)", value=0.0, format="%.2f")
@@ -105,10 +105,10 @@ def main():
             st.error("Harap isi inputan dengan angka yang valid")
     kadar_debu = hitung_kadar_debu(bobot_awal, bobot_akhir, volume_udara_standar)
     kadar_debu_real=kadar_debu*1000
-    st.write(f"**Kadar debu adalah *{kadar_debu:.2f} mg/Nm³***")
+    st.write(f"**Kadar debu adalah *{kadar_debu:} mg/Nm³***")
     if kadar_debu_real < 0:
         st.subheader("Tidak Memenuhi Baku Mutu")
-    elif 0<= kadar_debu_real<= 150:
+    elif 0 < kadar_debu_real <= 150:
         st.subheader ("Memenuhi Baku Mutu")
     elif kadar_debu_real== 0.00:
         st.subheader("")

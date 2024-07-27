@@ -122,6 +122,9 @@ if selected == "Informasi Umum":
         8. Hasil perhitungan akan menunjukkan hasil kadar debu beserta keterangan **apakah kadar tersebut memenuhi standar baku mutu atau tidak** menurut Peraturan Pemerintah Republik Indonesia Nomor 41 Tahun 1999 Tentang Pengendalian Pencemaran Udara
         """
     st.markdown(instructions)
+
+    st.divider()
+    st.markdown('Jika terjadi masalah pada web aplikasi, anda dapat menghubungi kami ke  \n:envelope: innovativecalculator@gmail.com')
     
 if selected == "Materi dan Rumus":
     st.subheader(":dizzy: Pengantar", divider='rainbow')

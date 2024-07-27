@@ -35,7 +35,7 @@ def hitung_volume_standar(volume_udara_sampling, tekanan_udara, suhu):
 def hitung_kadar_debu(bobot_awal, bobot_akhir, volume_udara_standar):
     if bobot_awal == 0.00 and bobot_akhir == 0.00:
         return 0
-    kadar_debu = ((bobot_awal - bobot_akhir) * 1000) / volume_udara_standar
+    kadar_debu = ((bobot_akhir - bobot_awal) * 1000) / volume_udara_standar
     return round(kadar_debu, 2)
 
 def image_to_base64(image_path):
@@ -222,7 +222,7 @@ if selected == "Materi dan Rumus":
     """, unsafe_allow_html=True)
     st.subheader(':bulb: Rumus', divider='green')
     st.latex(r'''
-    \text{Volume} = \text{rata-rata laju alir} \left(\frac{l}{\text{menit}}\right) \times \text{lama pengukuran (menit)}
+    \text{Volume udara yang disampling} = \text{rata-rata laju alir} \left(\frac{l}{\text{menit}}\right) \times \text{lama pengukuran (menit)}
     ''')
     
     st.latex(r'''
@@ -240,7 +240,7 @@ if selected == "Materi dan Rumus":
     - $T_a$ adalah suhu aktual dalam satuan Kelvin
     - 298 K adalah suhu dalam keadaan standar
     - 760 mmHg adalah tekanan dalam keadaan standar
-    - Selisih bobot adalah $\frac{\text{Bobot Awal (gram)} - \text{Bobot Akhir (gram)}}{\text{Volume Standar}}$
+    - Selisih bobot adalah $\frac{\text{Bobot Akhir (gram)} - \text{Bobot Awal (gram)}}{\text{Volume Standar}}$
     ''')
     
 if selected == "Kalkulator":

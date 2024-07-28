@@ -94,41 +94,48 @@ if selected == "Informasi Umum":
     st.header(':sparkles: **Selamat Datang** di :green[Aplikasi Kalkulator Kadar Debu PM 10] :sparkles:', divider='green') 
     st.markdown("<p class='justified-text'>Aplikasi Kalkulator Kadar Debu PM10 hadir untuk membantu analis dalam memproses data pengukuran alat HVAS seperti penentuan volume udara yang di sampling, volume udara yang disampling dalam keadaan standar, dan kadar debu yang hasilnya akan dibandingkan dengan standar baku mutu udara ambien.</p>", unsafe_allow_html=True)
     
+    st.subheader(':seven: Anggota Kelompok 7', divider='blue')
+
     html = f"""
-    <h5 style="text-align:center; margin-top:40px;">Anggota Kelompok 7</h5>
-    <table style="width:100%; border:none; margin-bottom:50px;">
-    <thead>
-        <tr>
-            <th style="padding: 8px; text-align:center; border:none;">Ariyani Leila Syari’fa </th>
-            <th style="padding: 8px; text-align:center; border:none;">Febrizianty Nur Fajriani </th>
-            <th style="padding: 8px; text-align:center; border:none;">Muhammad Naufal Farras Wijatmoko </th>
-            <th style="padding: 8px; text-align:center; border:none;">Sabila Nur Inayah</th>
-        </tr>
-        <tr>
-            <td style="padding: 8px; text-align:center; border:none;">2330487</td>
-            <td style="padding: 8px; text-align:center; border:none;">2330503</td>
-            <td style="padding: 8px; text-align:center; border:none;">2330514</td>
-            <td style="padding: 8px; text-align:center; border:none;">2330527</td>
-        </tr>
-        <tr>
-            <td style="padding: 8px; text-align:center; border:none;">
-                <img src="data:image/jpeg;base64,{image_base64_list[0]}" alt="Image 1" style="width:100px; height:200px; width:400px;">
-            </td>
-            <td style="padding: 8px; text-align:center; border:none;">
-                <img src="data:image/jpeg;base64,{image_base64_list[1]}" alt="Image 2" style="width:100px; height:200px; width:400px;">
-            </td>
-            <td style="padding: 8px; text-align:center; border:none;">
-                <img src="data:image/jpeg;base64,{image_base64_list[2]}" alt="Image 3" style="width:100px; height:200px; width:400px;">
-            </td>
-            <td style="padding: 8px; text-align:center; border:none;">
-                <img src="data:image/jpeg;base64,{image_base64_list[3]}" alt="Image 4" style="width:100px; height:200px; width:400px;">
-            </td>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-    </table>
-    """
+        <div style="display: flex; flex-direction: column; margin-bottom:50px;">
+            <div style="display: flex; align-items: center; margin-bottom:20px;">
+                <div style="width:70px; height:70px; border-radius:50%; overflow:hidden; margin-right:20px;">
+                    <img src="data:image/jpeg;base64,{image_base64_list[0]}" alt="Image 1" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div style="text-align:left;">
+                    <div style="font-weight:bold;">Ariyani Leila Syari’fa</div>
+                    <div>2330487</div>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom:20px;">
+                <div style="width:70px; height:70px; border-radius:50%; overflow:hidden; margin-right:20px;">
+                    <img src="data:image/jpeg;base64,{image_base64_list[1]}" alt="Image 2" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div style="text-align:left;">
+                    <div style="font-weight:bold;">Febrizianty Nur Fajriani</div>
+                    <div>2330503</div>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom:20px;">
+                <div style="width:70px; height:70px; border-radius:50%; overflow:hidden; margin-right:20px;">
+                    <img src="data:image/jpeg;base64,{image_base64_list[2]}" alt="Image 3" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div style="text-align:left;">
+                    <div style="font-weight:bold;">Muhammad Naufal Farras Wijatmoko</div>
+                    <div>2330514</div>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom:20px;">
+                <div style="width:70px; height:70px; border-radius:50%; overflow:hidden; margin-right:20px;">
+                    <img src="data:image/jpeg;base64,{image_base64_list[3]}" alt="Image 4" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div style="text-align:left;">
+                    <div style="font-weight:bold;">Sabila Nur Inayah</div>
+                    <div>2330527</div>
+                </div>
+            </div>
+        </div>
+        """
     st.markdown(html, unsafe_allow_html=True)
 
     st.subheader(':rocket: Cara Penggunaan Aplikasi', divider='grey')

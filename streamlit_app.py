@@ -121,7 +121,7 @@ if selected == "Informasi Umum":
                     <img src="data:image/jpeg;base64,{image_base64_list[2]}" alt="Image 3" style="width:100%; height:100%; object-fit:cover;">
                 </div>
                 <div style="text-align:left;">
-                    <div style="font-weight:bold;">Muhammad Naufal Farras Wijatmoko</div>
+                    <div style="font-weight:bold;">Muhammad Naufal Farras W</div>
                     <div>2330514</div>
                 </div>
             </div>
